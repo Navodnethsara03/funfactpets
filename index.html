@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Pet Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #fact {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Pet Facts</h1>
+    <div id="fact">Click the button to see a fact!</div>
+    <button onclick="displayRandomFact()">Show Random Fact</button>
+
+    <script>
+        const facts = [
+            {
+                "fact": "Dogs' Smell",
+                "description": "Dogs' sense of smell is 10,000 to 100,000 times more sensitive than humans."
+            },
+            {
+                "fact": "Cats' Purring",
+                "description": "Cats purr when happy, scared, or in pain."
+            },
+            {
+                "fact": "Parrots' Lifespan",
+                "description": "Some parrots can live over 50 years."
+            },
+            {
+                "fact": "Goldfish Memory",
+                "description": "Goldfish can remember things for at least three months."
+            },
+            {
+                "fact": "Rabbits' Teeth",
+                "description": "Rabbit teeth never stop growing."
+            },
+            {
+                "fact": "Hamsters' Cheeks",
+                "description": "Hamsters store food in expandable cheek pouches."
+            },
+            {
+                "fact": "Guinea Pig Sounds",
+                "description": "Guinea pigs communicate with various sounds."
+            },
+            {
+                "fact": "Ferrets' Sleep",
+                "description": "Ferrets sleep about 18 hours a day."
+            },
+            {
+                "fact": "Turtles' Longevity",
+                "description": "Some turtles can live over 100 years."
+            },
+            {
+                "fact": "Pet Benefits",
+                "description": "Pets can reduce stress and improve mental health."
+            }
+        ];
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${fact.fact}: ${fact.description}`;
+        }
+    </script>
+
+</body>
+</html>
